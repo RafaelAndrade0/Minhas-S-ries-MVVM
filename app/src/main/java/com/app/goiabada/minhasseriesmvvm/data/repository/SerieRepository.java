@@ -26,7 +26,7 @@ public class SerieRepository {
     }
 
     public void alterar(Serie serie) {
-
+        new AlterarSerieAsyncTask(serieDao).execute(serie);
     }
 
     public void deletar(Serie serie) {
@@ -66,8 +66,8 @@ public class SerieRepository {
         }
 
         @Override
-        protected Void doInBackground(Serie... notes) {
-            serieDao.deletar(notes[0]);
+        protected Void doInBackground(Serie... series) {
+            serieDao.deletar(series[0]);
             return null;
         }
     }
@@ -83,6 +83,21 @@ public class SerieRepository {
         @Override
         protected Void doInBackground(Void... voids) {
             serieDao.deletarTodasSeries();
+            return null;
+        }
+    }
+
+    public static class AlterarSerieAsyncTask extends AsyncTask<Serie, Void, Void> {
+
+        private SerieDao serieDao;
+
+        public AlterarSerieAsyncTask(SerieDao serieDao) {
+            this.serieDao = serieDao;
+        }
+
+        @Override
+        protected Void doInBackground(Serie... series) {
+            serieDao.alterar(series[0]);
             return null;
         }
     }

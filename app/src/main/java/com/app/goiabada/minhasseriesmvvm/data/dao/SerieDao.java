@@ -26,6 +26,6 @@ public interface SerieDao {
     @Query("DELETE FROM serie_table")
     void deletarTodasSeries();
 
-    @Query("SELECT * FROM serie_table ORDER BY id DESC")
+    @Query("SELECT * FROM serie_table ORDER BY titulo ASC")
     LiveData<List<Serie>> retornarTodasSeries();
 }

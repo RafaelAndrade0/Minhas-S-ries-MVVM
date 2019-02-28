@@ -30,7 +30,7 @@
         android:text="Favorita"/>
 
     <Button
-        android:id="@+id/botao_salvar_serie"
+        android:id="@+id/botao_alterar_serie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

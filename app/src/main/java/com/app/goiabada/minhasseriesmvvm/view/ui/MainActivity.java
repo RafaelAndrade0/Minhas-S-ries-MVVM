@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Serie> series) {
                 adapter.submitList(series);
-//                Toast.makeText(MainActivity.this, "Changed", Toast.LENGTH_SHORT).show();
             }
         });
 

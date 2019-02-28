@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -21,6 +23,7 @@ public class AddSerieActivity extends AppCompatActivity {
     private EditText editTextTitulo;
     private EditText editTextDescricao;
     private CheckBox checkBoxFavorito;
+    private Button buttonSalvarSerie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,14 @@ public class AddSerieActivity extends AppCompatActivity {
         editTextTitulo = findViewById(R.id.edit_text_titulo);
         editTextDescricao = findViewById(R.id.edit_text_descricao);
         checkBoxFavorito = findViewById(R.id.checkbox_favorito);
+        buttonSalvarSerie = findViewById(R.id.botao_salvar_serie);
+
+        buttonSalvarSerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                salvarSerie();
+            }
+        });
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
 
